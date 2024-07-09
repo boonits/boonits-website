@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from '../components/navbar'
 import { baseFont } from '../styles'
 
+
 export const metadata: Metadata = {
   title: "Katherine Biewer",
   icons: { icon: "/frog.ico" }

@@ -1,6 +1,8 @@
 // 'use client';
 import Image from "next/image";
-import { paragraphStyles } from "../styles";
+import { baseFont } from "../styles";
+
+const paragraphStyles = 'mb-4 text-lg'
 // import FrogRainComponent from "../components/make-it-rain";
 
 // TODO: Have a button where you can make it rain frogs

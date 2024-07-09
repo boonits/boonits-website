@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
-import { linkStyles } from '../styles';
+import { boldFont } from '../styles';
+
+const linkStyles = `text-base-100 text-lg ${boldFont.className}`;
 
 const Navbar = () => {
   return (
