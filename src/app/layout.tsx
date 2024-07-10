@@ -6,7 +6,8 @@ import { baseFont } from '../styles'
 
 export const metadata: Metadata = {
   title: "Katherine Biewer",
-  icons: { icon: "/frog.ico" }
+  icons: { icon: "/frog.ico" },
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

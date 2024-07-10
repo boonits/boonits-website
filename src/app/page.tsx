@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { baseFont } from "../styles";
 
-const paragraphStyles = 'mb-4 text-lg'
+const paragraphStyles = 'mb-4 text-lg text-justify'
 // import FrogRainComponent from "../components/make-it-rain";
 
 // TODO: Have a button where you can make it rain frogs
@@ -12,16 +12,21 @@ const KathyImage = () => {
     <Image
       src="/kathy.svg"
       alt="Kathy"
-      width={500}
-      height={500}
+      width={400}
+      height={400}
+      layout="responsive"
     />
   );
 };
 
 export default function Home() {
   return (
-    <div className="flex">
-      <div className="flex-1 p-8">
+    <div className="flex flex-col md:flex-row">
+       <div className="w-full md:w-1/3 p-4 md:p-8">
+        <KathyImage />
+        {/* <FrogRainComponent /> */}
+      </div>
+      <div className="w-full md:w-2/3 p-4 md:p-8">
         <h1 className="text-4xl font-bold mb-4">Hi! &#x1F44B;  My name is Kat</h1>
         <p className="mb-4 text-lg">
           &#127757; I currently work as a Spatial Analyst and Software Developer at <a href="https://urbis.com.au/" target="_blank" rel="noopener noreferrer" className="text-neutral font-bold">Urbis</a>.  
@@ -43,10 +48,7 @@ export default function Home() {
           and would encourage you to do the same!
         </p>
       </div>
-      <div className="flex p-8">
-        <KathyImage />
-        {/* <FrogRainComponent /> */}
-      </div>
+     
     </div>
   );
 }
