@@ -55,6 +55,7 @@ export default function Home() {
         <KathyImage />
         <div>
           <h1 className="text-4xl font-bold mb-1">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             Hi! &#x1F44B; I'm Kat
           </h1>
           <p className="text-lg text-neutral-content">
@@ -66,6 +67,7 @@ export default function Home() {
       {/* Main content */}
       <div className="space-y-4 mb-10">
         <p className="text-lg leading-relaxed">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           I am an independent software engineer focused on AI safety. Currently, I'm working on building capability <StyledLink href="https://forum.effectivealtruism.org/topics/ai-evaluations-and-standards?sortedBy=new">evaluations</StyledLink> that can meaningfully assess catastrophic risks from AI agents, specifically <StyledLink href="https://www.lesswrong.com/w/recursive-self-improvement">recursive self-improvement</StyledLink> and <StyledLink href="https://www.rand.org/pubs/commentary/2024/10/how-ai-can-automate-ai-research-and-development.html">automated AI R&D</StyledLink>. 
         </p>
         <p className="text-lg leading-relaxed">
