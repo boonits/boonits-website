@@ -1,56 +1,110 @@
-// 'use client';
+'use client';
 import Image from "next/image";
-import { baseFont } from "../styles";
+import Link from "next/link";
+import { useState, useEffect } from 'react';
+import { FaEnvelope, FaLinkedin, FaGithub, FaCalendarAlt } from 'react-icons/fa';
 
-const paragraphStyles = 'mb-4 text-lg text-justify'
-// import FrogRainComponent from "../components/make-it-rain";
-
-// TODO: Have a button where you can make it rain frogs
+const StyledLink = ({ href, children }) => (
+  <Link 
+    href={href}
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="text-neutral font-bold"
+  >
+    {children}
+  </Link>
+);
 
 const KathyImage = () => {
   return (
-    <Image
-      src="/kathy.svg"
-      alt="Kathy"
-      width={400}
-      height={400}
-      layout="responsive"
-    />
+    <div className="relative w-32 h-32 overflow-hidden rounded-full bg-primary p-1">
+      <Image
+        src="/kathy.svg"
+        alt="Katherine Biewer"
+        fill
+        className="object-cover rounded-full"
+        priority
+      />
+    </div>
   );
 };
 
+const SocialButton = ({ href, Icon, label }) => (
+  <a 
+    href={href} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="btn btn-sm btn-outline flex items-center gap-2"
+    aria-label={label}
+  >
+    <Icon size={16} />
+    <span>{label}</span>
+  </a>
+);
+
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div className="flex flex-col md:flex-row">
-       <div className="w-full md:w-1/3 p-4 md:p-8">
+    <div className="container mx-auto p-4 max-w-4xl">
+      <div className="flex items-center gap-6 mb-12">
         <KathyImage />
-        {/* <FrogRainComponent /> */}
+        <div>
+          <h1 className="text-4xl font-bold mb-1">
+            Hi! &#x1F44B; I'm Kat
+          </h1>
+          <p className="text-lg text-neutral-content">
+            AI Safety Engineer & Enthusiastic Learner
+          </p>
+        </div>
       </div>
-      <div className="w-full md:w-2/3 p-4 md:p-8">
-        <h1 className="text-4xl font-bold mb-4">Hi! &#x1F44B;  My name is Kat</h1>
-        <p className="mb-4 text-lg">
-          &#127757; I currently work as a Spatial Analyst and Software Developer at <a href="https://urbis.com.au/" target="_blank" rel="noopener noreferrer" className="text-neutral font-bold">Urbis</a>.  
+
+      {/* Main content */}
+      <div className="space-y-4 mb-10">
+        <p className="text-lg leading-relaxed">
+          I am an independent software engineer focused on AI safety. Currently, I'm working on building capability <StyledLink href="https://forum.effectivealtruism.org/topics/ai-evaluations-and-standards?sortedBy=new">evaluations</StyledLink> that can meaningfully assess catastrophic risks from AI agents, specifically <StyledLink href="https://www.lesswrong.com/w/recursive-self-improvement">recursive self-improvement</StyledLink> and <StyledLink href="https://www.rand.org/pubs/commentary/2024/10/how-ai-can-automate-ai-research-and-development.html">automated AI R&D</StyledLink>. 
         </p>
-        <p className={paragraphStyles}>
+        <p className="text-lg leading-relaxed">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          I'm a self-proclaimed nerd and have an almost insatiable thirst for learning new technology. I have experience in spatial and data analysis, web and software development, and machine learning. I'm 
-          also currently seeking to work on open source projects in my spare time, so please <a href="/contact" rel="noopener noreferrer" className="text-neutral font-bold">reach out </a> 
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          if you'd like to collaborate! 
+          I'm a self-proclaimed nerd and have an almost insatiable thirst for learning new things. If you have a fascinating project or curious idea to explore, I'd love to hear about it!
         </p>
-        <p className={paragraphStyles}>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          I'm especially interested in working on projects related to AI safety and/or governance. No matter what your <a href="https://en.wikipedia.org/wiki/P(doom)" target="_blank" rel="noopener noreferrer" className="text-neutral font-bold">p(doom) </a>
-          is, when humanity itself is on the line, we must do everything humanly possible to lower the risk as much as we can.
-        </p>
-        <p className={paragraphStyles}>
-          I have also taken the <a href="https://www.givingwhatwecan.org/pledge" target="_blank" rel="noopener noreferrer" className="text-neutral font-bold">10% pledge &#x1F536; </a>
+        <p className="text-lg leading-relaxed">
+          I have also taken the <StyledLink href="https://www.givingwhatwecan.org/pledge">10% pledge &#x1F536; </StyledLink>
           and would encourage you to do the same!
         </p>
       </div>
-     
+      <div className="flex flex-wrap gap-3 mb-12">
+        <a href="https://calendar.app.google/p5yyGZsJjy3VZpTJ6" target="_blank" rel="noopener noreferrer" className="btn btn-primary flex items-center gap-2">
+          <FaCalendarAlt size={16} />
+          Book a chat with me
+        </a>
+      </div>
+
+      {/* Social links at the bottom */}
+      <div className="border-t pt-6">
+        <h2 className="text-xl font-semibold mb-4">Connect with me</h2>
+        <div className="flex flex-wrap gap-3">
+          <SocialButton 
+            href="https://github.com/boonits" 
+            Icon={FaGithub} 
+            label="GitHub"
+          />
+          <SocialButton 
+            href="https://linkedin.com/in/katherine-biewer" 
+            Icon={FaLinkedin} 
+            label="LinkedIn"
+          />
+          <SocialButton 
+            href="mailto:katbiewer@gmail.com" 
+            Icon={FaEnvelope} 
+            label="Email"
+          />
+        </div>
+      </div>
     </div>
   );
 }
-
-

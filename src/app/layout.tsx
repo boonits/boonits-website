@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from '../components/navbar'
-import { baseFont } from '../styles'
-
+import { Figtree } from "next/font/google";
+export const baseFont = Figtree({ weight: ["400"], preload: false });
 
 export const metadata: Metadata = {
   title: "Katherine Biewer",
@@ -15,7 +14,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html>
       <body className={baseFont.className}>
         <div className="flex flex-col"> 
-          <Navbar />
           <main className="container mx-auto pt-8">{children}</main>
         </div>
       </body>
