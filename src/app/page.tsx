@@ -1,19 +1,20 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaCalendarAlt } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
-const StyledLink = ({ href, children }) => (
-  <Link 
-    href={href}
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-neutral font-bold"
-  >
-    {children}
-  </Link>
-);
+interface StyledLinkProps {
+  href: string;
+  children: ReactNode;
+}
+
+interface SocialButtonProps {
+  href: string;
+  Icon: IconType;
+  label: string;
+}
 
 const KathyImage = () => {
   return (
@@ -29,7 +30,19 @@ const KathyImage = () => {
   );
 };
 
-const SocialButton = ({ href, Icon, label }) => (
+const StyledLink = ({ href, children }: StyledLinkProps) => (
+  <Link 
+    href={href}
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="text-neutral font-bold"
+  >
+    {children}
+  </Link>
+);
+
+
+const SocialButton = ({ href, Icon, label }: SocialButtonProps) => (
   <a 
     href={href} 
     target="_blank" 
