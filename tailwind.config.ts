@@ -8,18 +8,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        heading: ["var(--font-heading)", "Georgia", "serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+      },
+      colors: {
+        bg: "#FAF7F2",
+        surface: "#F2EDE6",
+        text: "#2C2825",
+        "text-muted": "#6B6560",
+        accent: "#A65D4A",
+        "accent-hover": "#8E4E3D",
+        border: "#E2DCD5",
+      },
+      maxWidth: {
+        content: "52rem",
       },
     },
   },
-  plugins: [
-    require('daisyui'),
-  ],
-  daisyui: {
-    themes: ["cupcake"],
-  },
+  plugins: [],
 };
+
 export default config;

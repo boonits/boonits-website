@@ -1,125 +1,96 @@
-'use client';
 import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect, ReactNode } from 'react';
-import { FaEnvelope, FaLinkedin, FaGithub, FaCalendarAlt } from 'react-icons/fa';
-import { IconType } from 'react-icons';
-
-interface StyledLinkProps {
-  href: string;
-  children: ReactNode;
-}
-
-interface SocialButtonProps {
-  href: string;
-  Icon: IconType;
-  label: string;
-}
-
-const KathyImage = () => {
-  return (
-    <div className="relative w-32 h-32 overflow-hidden rounded-full bg-primary p-1">
-      <Image
-        src="/kathy.svg"
-        alt="Katherine Biewer"
-        fill
-        className="object-cover rounded-full"
-        priority
-      />
-    </div>
-  );
-};
-
-const StyledLink = ({ href, children }: StyledLinkProps) => (
-  <Link 
-    href={href}
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="text-neutral font-bold"
-  >
-    {children}
-  </Link>
-);
-
-
-const SocialButton = ({ href, Icon, label }: SocialButtonProps) => (
-  <a 
-    href={href} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="btn btn-sm btn-outline flex items-center gap-2"
-    aria-label={label}
-  >
-    <Icon size={16} />
-    <span>{label}</span>
-  </a>
-);
+import { FaEnvelope, FaLinkedin, FaGithub, FaCalendarAlt } from "react-icons/fa";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-  
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <div className="container mx-auto p-4 max-w-4xl">
-      <div className="flex items-center gap-6 mb-12">
-        <KathyImage />
-        <div>
-          <h1 className="text-4xl font-bold mb-1">
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
-            Hi! &#x1F44B; I'm Kat
-          </h1>
-          <p className="text-lg text-neutral-content">
-            AI Safety Engineer & Enthusiastic Learner
+    <article>
+      {/* Hero */}
+      <header className="mb-16">
+        <div className="relative w-28 h-28 mb-8 overflow-hidden rounded-full ring-2 ring-border">
+          <Image
+            src="/me.jpg"
+            alt="Katherine Biewer"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <h1 className="mb-3 text-balance">Katherine Biewer</h1>
+        <p className="text-lg text-text-muted">
+          Researcher at the intersection of hardware and AI
+        </p>
+      </header>
+
+      {/* About */}
+      <section className="mb-16">
+        <div className="space-y-5">
+          <p className="leading-relaxed">
+            I research how hardware will continue to impact AI progress. Currently, I am focused 
+            on investigating how AI will be incorperated into hardware design flows. This project
+            had been funded by Coefficient Giving.
+          </p>
+          <p>
+            Previously, I&apos;ve worked as a spatial analyst and software engineer. My favourtie project was 
+            leading the development of evaluations investigating hardware design capabilities in LLMs.
+          </p>
+          <p className="leading-relaxed">
+            I&apos;m an endlessly curious person and have an almost insatiable thirst for 
+            learning new things. If you have a fascinating project or an idea worth exploring,
+            I&apos;d love to hear about it.
+          </p>
+          <p>
+            This website will be updated with some of my writings and other content soon!
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Main content */}
-      <div className="space-y-4 mb-10">
-        <p className="text-lg leading-relaxed">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          I am an independent software engineer focused on AI safety. Currently, I'm working on building capability <StyledLink href="https://forum.effectivealtruism.org/topics/ai-evaluations-and-standards?sortedBy=new">evaluations</StyledLink> that can meaningfully assess catastrophic risks from AI agents, specifically <StyledLink href="https://www.lesswrong.com/w/recursive-self-improvement">recursive self-improvement</StyledLink> and <StyledLink href="https://www.rand.org/pubs/commentary/2024/10/how-ai-can-automate-ai-research-and-development.html">automated AI R&D</StyledLink>. 
-        </p>
-        <p className="text-lg leading-relaxed">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          I'm a self-proclaimed nerd and have an almost insatiable thirst for learning new things. If you have a fascinating project or curious idea to explore, I'd love to hear about it!
-        </p>
-        <p className="text-lg leading-relaxed">
-          I have also taken the <StyledLink href="https://www.givingwhatwecan.org/pledge">10% pledge &#x1F536; </StyledLink>
-          and would encourage you to do the same!
-        </p>
-      </div>
-      <div className="flex flex-wrap gap-3 mb-12">
-        <a href="https://calendar.app.google/p5yyGZsJjy3VZpTJ6" target="_blank" rel="noopener noreferrer" className="btn btn-primary flex items-center gap-2">
-          <FaCalendarAlt size={16} />
-          Book a chat with me
-        </a>
-      </div>
-
-      {/* Social links at the bottom */}
-      <div className="border-t pt-6">
-        <h2 className="text-xl font-semibold mb-4">Connect with me</h2>
-        <div className="flex flex-wrap gap-3">
-          <SocialButton 
-            href="https://github.com/boonits" 
-            Icon={FaGithub} 
-            label="GitHub"
-          />
-          <SocialButton 
-            href="https://linkedin.com/in/katherine-biewer" 
-            Icon={FaLinkedin} 
-            label="LinkedIn"
-          />
-          <SocialButton 
-            href="mailto:katbiewer@gmail.com" 
-            Icon={FaEnvelope} 
-            label="Email"
-          />
+      {/* Connect */}
+      <footer className="pt-2">
+        <h2 className="mb-6">Get in touch</h2>
+        <div className="flex flex-wrap gap-3 mb-6">
+          <a
+            href="https://calendar.app.google/p5yyGZsJjy3VZpTJ6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            <FaCalendarAlt size={16} />
+            Book a chat
+          </a>
         </div>
-      </div>
-    </div>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://github.com/boonits"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            aria-label="GitHub"
+          >
+            <FaGithub size={16} />
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/katherine-biewer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin size={16} />
+            LinkedIn
+          </a>
+          <a
+            href="mailto:katbiewer@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            aria-label="Email"
+          >
+            <FaEnvelope size={16} />
+            Email
+          </a>
+        </div>
+      </footer>
+    </article>
   );
 }
