@@ -26,7 +26,7 @@ export default function Home() {
         <div className="space-y-5">
           <p className="leading-relaxed">
             I research how hardware will continue to impact AI progress. Currently, I am focused 
-            on investigating how AI will be incorperated into hardware design flows. This project
+            on measuring the ability of AI to accelerate hardware R&D. This project
             had been funded by Coefficient Giving.
           </p>
           <p>
