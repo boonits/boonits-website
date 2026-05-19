@@ -44,9 +44,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent writings */}
+      {/* Recent posts */}
       <section>
-        <h2 className="mb-6">Recent writings</h2>
+        <h2 className="mb-6">Recent posts</h2>
         <ul className="space-y-6">
           {recentWritings.map((post) => (
             <li key={post.url}>
@@ -70,7 +70,7 @@ export default function Home() {
           href="/writings"
           className="mt-6 inline-block text-sm font-medium text-accent hover:text-accent-hover transition-colors"
         >
-          All writings →
+          All posts →
         </Link>
       </section>
     </article>
