@@ -48,7 +48,7 @@ export default function RootLayout({
             </div>
             <div className="flex gap-6">
               <a
-                href="https://github.com/boonits"
+                href="https://github.com/katbiewer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-muted/70 hover:text-accent transition-colors"
