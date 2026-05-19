@@ -13,6 +13,6 @@ export const recentWritings: Writing[] = [
     venue: "LessWrong",
     date: "May 2026",
     summary:
-      "Current approaches to tracking AI compute (which rely on a handful of hardware proxies such as FLOPs and bandwidth) are becoming less useful as hardware diversifies across multiple architecture types.",
+      "Current approaches to tracking AI compute (which rely on a handful of hardware proxies such as FLOP/s and bandwidth) are becoming less useful as hardware diversifies across multiple architecture types.",
   },
 ];
