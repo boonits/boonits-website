@@ -33,7 +33,7 @@ export default function Home() {
             had been funded by Coefficient Giving.
           </p>
           <p>
-            Previously, I&apos;ve worked as a software engineer and spatial analyst. My favourtie project was
+            Previously, I&apos;ve worked as a software engineer and spatial analyst. My favourite project was
             leading the development of evaluations investigating hardware design capabilities in LLMs.
           </p>
           <p className="leading-relaxed">
